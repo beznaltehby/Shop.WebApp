@@ -1,0 +1,12 @@
+@import '../../core/core.scss';
+
+main-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  height: $header-height;
+  background-color: $shop-black-color;
+  color: $shop-white-color;
+  padding: 0 10px;
+}

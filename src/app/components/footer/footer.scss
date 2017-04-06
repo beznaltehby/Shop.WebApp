@@ -1,0 +1,10 @@
+@import '../../core/core.scss';
+
+main-footer {
+  display: flex;
+  align-items: center;
+  height: $footer-height;
+  background-color: $shop-black-color;
+  color: $shop-white-color;
+  padding: 0 10px;
+}
