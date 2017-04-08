@@ -4,10 +4,20 @@ import  _ from 'lodash/core';
 import moment from 'moment';
 import angularLogo from '_images/angular.png';
 
-function MainController($log) {
+function MainController(CategoriesData) {
     'ngInject';
 
-    this.hello = 'Main Controller';
+    let vm = this;
+
+    vm.result = null;
+
+    CategoriesData.getCategories()
+        .then(function (categories) {
+            vm.result = categories;
+        })
+        .catch(function (err) {
+            vm.result = err;
+        });
 }
 
 export default MainController;

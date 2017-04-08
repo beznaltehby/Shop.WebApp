@@ -2,7 +2,8 @@
 
 export default function (app) {
     app
-        .constant('ROUTE_ERRORS', {
-            auth: 'Authorization has been denied.',
+        .constant('consts', {
+            baseApiUrl: 'http://api.export.zoomos.by',
+            apiKey: 'api-help'
         });
 }
