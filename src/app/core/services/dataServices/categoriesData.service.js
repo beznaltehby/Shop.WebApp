@@ -12,11 +12,9 @@ function CategoriesData ($q, ApiUrls) {
     this.loadCategories = function () {
         let deferred = $q.defer();
 
-        ApiUrls.getCategories().then(function (response) {
-            deferred.resolve(response);
-        }, function (err) {
-            deferred.reject(err);
-        });
+        ApiUrls.getCategories()
+            .then((response) => deferred.resolve(response))
+            .catch((err) => deferred.reject(err));
 
         this.categories = deferred.promise;
     };

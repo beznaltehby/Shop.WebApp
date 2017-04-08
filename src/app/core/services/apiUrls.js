@@ -7,15 +7,11 @@ export default function (app) {
 function ApiUrls ($http, consts) {
     'ngInject';
 
-    function getParams(params) {
-        return Object.assign({key: consts.apiKey}, params);
-    }
-
     function getRequest(url, params) {
         return $http({
             method: 'GET',
             url: consts.baseApiUrl + url,
-            params: getParams(params)
+            params: params
         });
     }
 

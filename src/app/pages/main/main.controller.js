@@ -12,12 +12,8 @@ function MainController(CategoriesData) {
     vm.result = null;
 
     CategoriesData.getCategories()
-        .then(function (categories) {
-            vm.result = categories;
-        })
-        .catch(function (err) {
-            vm.result = err;
-        });
+        .then((categories) => vm.result = categories)
+        .catch((err) => vm.result = err);
 }
 
 export default MainController;
