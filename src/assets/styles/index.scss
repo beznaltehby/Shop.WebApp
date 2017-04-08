@@ -19,4 +19,5 @@ main-header, main-footer {
 
 div[ui-view] {
   flex-grow: 1;
+  overflow-y: auto;
 }
