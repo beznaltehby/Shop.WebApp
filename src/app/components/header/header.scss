@@ -1,7 +1,6 @@
 @import '../../core/core.scss';
-@import "../../core/material-colors";
 
-$header-background-color: color($orange, 600);
+$header-background-color: color($brand-primary-color, 600);
 $menu-height: 40px;
 
 main-header {

@@ -1,1 +1,53 @@
-{{vm.data}}
+<div class="item">
+    <div class="item-title">
+        {{vm.item.typePrefix}} {{vm.item.vendor.name}} {{vm.item.model}}
+    </div>
+    <div class="item-short-description">
+        <img class="item-preview" ng-src="{{vm.item.image}}" />
+        <div class="short-description-wrapper">
+            <div class="short-description">
+                <div class="description" ng-repeat="description in vm.item.shortDescription">
+                    <div class="name">
+                        {{description.name}}
+                    </div>
+                    <div class="value">
+                        {{description.value}}
+                    </div>
+                </div>
+            </div>
+            <div class="price">
+                {{vm.item.price}} {{vm.item.priceCurrency}}
+            </div>
+        </div>
+    </div>
+
+    <div class="item-details">
+        <div class="feature-block" ng-repeat="featureBlock in vm.item.details.featuresBlocks">
+            <div class="feature-name">
+                {{featureBlock.name}}
+            </div>
+            <div class="feature" ng-repeat="feature in featureBlock.features">
+                <div class="name">
+                    {{feature.name}}
+                </div>
+                <div class="value">
+                    {{feature.values.join(', ')}}
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-block">
+            <div class="feature-name">
+                {{ :: 'LABELS.ITEM.WARRANTYINFO' | translate }}
+            </div>
+            <div class="feature" ng-repeat="field in vm.warrantyFields">
+                <div class="name">
+                    {{ :: 'LABELS.ITEM.' + field.toUpperCase() | translate }}
+                </div>
+                <div class="value">
+                    {{vm.item.warrantyInfo[field]}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,119 @@
+@import "../../core/core";
+
+$item-price-color: color($red, 700);
+$feature-border-color: color($grey, 300);
+$feature-block-name-background-color: color($grey, 50);
+$feature-hover-color: rgba(color($brand-primary-color, 50), 0.4);
+
+.item {
+  padding: 20px;
+  overflow-y: auto;
+
+  .item-title {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .item-short-description {
+    display: flex;
+    padding-top: 20px;
+  }
+
+  .item-preview {
+    align-self: center;
+    max-height: 150px;
+    max-width: 150px;
+    height: auto;
+    width: auto;
+  }
+
+  .short-description-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+
+    .price {
+      font-size: 20px;
+      font-weight: 600;
+      color: $item-price-color;
+    }
+  }
+
+  .short-description {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    .description {
+      display: flex;
+      font-size: 12px;
+      margin-right: 5px;
+
+      .name {
+        font-weight: 600;
+        margin-right: 5px;
+      }
+
+      .value {
+        font-style: italic;
+      }
+    }
+  }
+
+  .item-details {
+    margin-top: 20px;
+  }
+
+  .item-details, .feature-block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feature-name, .feature {
+    display: flex;
+    align-items: center;
+
+    height: 40px;
+
+    border-top: 1px solid $feature-border-color;
+  }
+
+  .feature-name {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+
+    background-color: $feature-block-name-background-color;
+  }
+
+  .feature {
+    &:hover {
+      background-color: $feature-hover-color;
+    }
+
+    .name, .value {
+      width: 50%;
+      padding-left: 20px;
+      font-weight: 100;
+      font-size: 14px;
+    }
+
+    .name {
+      display: flex;
+      align-items: center;
+      border-right: 1px solid $feature-border-color;
+      height: 100%;
+    }
+  }
+
+  .feature-block {
+    &:last-of-type {
+      border-bottom: 1px solid $feature-border-color;
+    }
+
+    .feature {
+      display: flex;
+    }
+  }
+}

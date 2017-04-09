@@ -1,8 +1,8 @@
-@import "../../core/material-colors";
+@import "../../core/core";
 
 $item-tile-border-color: color($grey, 200);
 $item-price-color: color($red, 700);
-$item-type-color: color($orange);
+$item-type-color: color($brand-primary-color);
 $item-tile-width: 290px;
 $item-tile-height: 270px;
 $item-tile-header-height: 70px;

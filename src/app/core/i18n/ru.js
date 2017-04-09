@@ -12,6 +12,14 @@ const ru = {
             DELIVERY: 'Оплата и доставка',
             ABOUT: 'О магазине',
             CONTACTS: 'Контакты'
+        },
+        ITEM: {
+            WARRANTYINFO: 'Гарантийная информация',
+            WARRANTY: 'Гарантия',
+            SUPPLIER: 'Импортер',
+            COUNTRY: 'Страна-производитель',
+            SERVICECENTERS: 'Сурвисные центры',
+            MANUFACTURER: 'Производитель'
         }
     }
 };
