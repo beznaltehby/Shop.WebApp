@@ -2,7 +2,7 @@
 
 import _ from 'lodash';
 
-function headerController($state, $rootScope, consts) {
+function headerController($state, $rootScope, consts, $log) {
     'ngInject';
 
     let vm = this;
@@ -37,6 +37,11 @@ function headerController($state, $rootScope, consts) {
     $rootScope.$on('$stateChangeSuccess', function (event, toState) {
         selectMenuItem(toState.name);
     });
+
+    vm.searchQuery = '';
+    vm.onSearch = function () {
+        $log.log(vm.searchQuery);
+    }
 }
 
 export default headerController;

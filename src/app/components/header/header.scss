@@ -23,11 +23,17 @@ main-header {
     cursor: pointer;
   }
 
-  .menu {
+  .actions {
     display: flex;
     flex-shrink: 0;
+    justify-content: space-between;
     height: $menu-height;
     max-height: $menu-height;
+  }
+
+  .menu {
+    display: flex;
+    height: 100%;
   }
 
   .menu-item {

@@ -1,14 +1,17 @@
 <div class="company-info">
     <img class="logo"
-         ng-src="{{vm.logoUrl}}"
+         ng-src="{{header.logoUrl}}"
          title="{{ :: 'LABELS.APPNAME' | translate }}"
-         ng-click="vm.goTo('main')"/>
+         ng-click="header.goTo('main')"/>
 </div>
-<div class="menu">
-    <div class="menu-item"
-         ng-class="{selected: item.isActive}"
-         ng-repeat="item in vm.menuItems"
-         ng-click="vm.goTo(item.state)">
-        {{ item.translationKey | translate }}
+<div class="actions">
+    <div class="menu">
+        <div class="menu-item"
+             ng-class="{selected: item.isActive}"
+             ng-repeat="item in header.menuItems"
+             ng-click="header.goTo(item.state)">
+            {{ item.translationKey | translate }}
+        </div>
     </div>
+    <expandable-search search-query="header.searchQuery" on-search="header.onSearch()" ></expandable-search>
 </div>

@@ -1,0 +1,12 @@
+<form class="expandable-search">
+    <div class="expandable-part" ng-class="{expanded: expanded}">
+        <input type="text" class="search-input" ng-model="searchQuery" ng-keyup="vm.checkEsc($event)">
+        <button type="button" class="cancel-button" ng-click="vm.cancel()">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <button type="submit" class="submit-button" ng-click="vm.submit()">
+        <i class="fa fa-search" aria-hidden="true"></i>
+    </button>
+</form>

@@ -1,0 +1,44 @@
+@import '../../core/core.scss';
+
+$expandable-search-width: 350px;
+$expandable-search-button-size: 30px;
+
+expandable-search {
+  height: 100%;
+}
+
+.expandable-search {
+  display: flex;
+  height: 100%;
+  align-items: center;
+
+  .expandable-part {
+    display: flex;
+    max-width: 0;
+    overflow: hidden;
+    transition: 0.5s;
+
+    &.expanded {
+      max-width: $expandable-search-width;
+    }
+  }
+
+  .submit-button, .cancel-button {
+    width: $expandable-search-button-size;
+    cursor: pointer;
+  }
+
+  .submit-button, .cancel-button, .search-input {
+    height: $expandable-search-button-size;
+    background: none;
+    border: 1px solid $shop-white-color;
+    color: $shop-white-color;
+    margin-right: 5px;
+    box-sizing: border-box;
+  }
+
+  .search-input {
+    width: $expandable-search-width - 2 * $expandable-search-button-size - 10px;
+    padding: 0 10px;
+  }
+}

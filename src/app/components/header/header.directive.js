@@ -9,7 +9,7 @@ function headerComponent() {
         restrict: 'E',
         templateUrl: headerTpl,
         controller: 'headerCtrl',
-        controllerAs: 'vm'
+        controllerAs: 'header'
     };
 }
 
