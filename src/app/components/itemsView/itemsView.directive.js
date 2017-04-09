@@ -15,7 +15,7 @@ function itemsViewComponent() {
         let viewerPadding = remainingSpace / 2;
 
         $('items-view').css({
-            padding: '20px ' + viewerPadding + 'px'
+            padding: '0 ' + viewerPadding + 'px'
         });
     }
 

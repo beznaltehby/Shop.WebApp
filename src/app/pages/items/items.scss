@@ -1,0 +1,11 @@
+@import "../../core/core";
+
+$selected-category: color($brand-primary-color, 700);
+
+.selected-category {
+  font-size: 24px;
+  font-weight: 600;
+  color: $selected-category;
+  margin: 10px 20px;
+  text-transform: uppercase;
+}

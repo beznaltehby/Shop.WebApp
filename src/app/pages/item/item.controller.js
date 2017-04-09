@@ -5,6 +5,10 @@ function ItemController($state, itemData) {
 
     let vm = this;
 
+    if (itemData.error) {
+        $state.transitionTo('main');
+    }
+
     vm.item = itemData;
 
     vm.item.shortDescription = itemData.shortDescriptionHTML.split('<br/>\n').map((item) => {
