@@ -1,5 +1,7 @@
 'use strict';
 
+import _ from 'lodash';
+
 function headerController($scope) {
     'ngInject';
 
