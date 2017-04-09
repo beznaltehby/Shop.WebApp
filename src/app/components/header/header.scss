@@ -2,14 +2,51 @@
 @import "../../core/material-colors";
 
 $header-background-color: color($orange, 600);
+$menu-height: 40px;
 
 main-header {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   text-transform: uppercase;
   height: $header-height;
   background-color: $header-background-color;
   color: $shop-white-color;
-  padding: 0 10px;
+
+  .company-info {
+    display: flex;
+    flex-grow: 1;
+    padding: 0 10px;
+  }
+
+  .logo {
+    max-height: $header-height - $menu-height - 20px;
+    margin: auto 0;
+    cursor: pointer;
+  }
+
+  .menu {
+    display: flex;
+    flex-shrink: 0;
+    height: $menu-height;
+    max-height: $menu-height;
+  }
+
+  .menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-bottom: 2px solid transparent;
+    transition: 0.25s;
+
+    &:hover, &.selected {
+      border-bottom-color: $shop-white-color;
+    }
+
+    &:hover {
+      background-color: lighten($header-background-color, 5%);
+    }
+  }
 }

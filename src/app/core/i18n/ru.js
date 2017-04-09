@@ -6,6 +6,12 @@ const ru = {
         CATEGORIES: {
             NOCHILDITEMS: "В данной категории нет подкатегорий.",
             SHOWITEMS: "Показать товары"
+        },
+        MENU: {
+            CATALOG: 'Каталог',
+            DELIVERY: 'Оплата и доставка',
+            ABOUT: 'О магазине',
+            CONTACTS: 'Контакты'
         }
     }
 };
