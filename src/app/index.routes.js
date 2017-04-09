@@ -2,7 +2,7 @@
 
 import categoriesTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/categories/categories.html';
 
-function routeConfig($urlRouterProvider, $stateProvider, resolverProvider) {
+function routeConfig($urlRouterProvider, $stateProvider, resolverProvider, dataProvider) {
     'ngInject';
     
     $stateProvider
@@ -10,9 +10,10 @@ function routeConfig($urlRouterProvider, $stateProvider, resolverProvider) {
             url: '/categories',
             templateUrl: categoriesTemplate,
             controller: 'categoriesCtrl',
-            controllerAs: 'categories',
+            controllerAs: 'vm',
             resolve: {
-                asyncPreloading: resolverProvider.categoriesPagePreloading
+                asyncPreloading: resolverProvider.categoriesPagePreloading,
+                categoriesData: dataProvider.categoriesDataPreloading
             }
         });
 

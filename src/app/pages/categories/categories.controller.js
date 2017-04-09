@@ -1,17 +1,15 @@
 'use strict';
 
-function CategoriesController(CategoriesData) {
+function CategoriesController(categoriesData) {
     'ngInject';
 
     let vm = this;
 
-    vm.result = null;
+    vm.categories = categoriesData.data;
 
-    CategoriesData.getCategories()
-        .then(function (categories) {
-            vm.result = categories;
-        })
-        .catch(err => vm.result = err);
+    vm.showData = function (category) {
+
+    }
 }
 
 export default CategoriesController;

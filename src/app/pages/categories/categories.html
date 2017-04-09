@@ -1,1 +1,3 @@
-{{categories.result}}
+<div class="category" ng-repeat="category in vm.categories" ng-click="vm.showData(category)">
+    {{category.name}}
+</div>
