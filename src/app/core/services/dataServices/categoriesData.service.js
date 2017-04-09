@@ -13,8 +13,8 @@ function CategoriesData ($q, ApiUrls) {
         let deferred = $q.defer();
 
         ApiUrls.getCategories()
-            .then((response) => deferred.resolve(response))
-            .catch((err) => deferred.reject(err));
+            .then(response => deferred.resolve(response.data))
+            .catch(err => deferred.reject(err));
 
         this.categories = deferred.promise;
     };

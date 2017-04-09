@@ -1,17 +1,18 @@
 'use strict';
 
-import asyncTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/async-page-example/async.html';
+import categoriesTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/categories/categories.html';
 
 function routeConfig($urlRouterProvider, $stateProvider, resolverProvider) {
     'ngInject';
     
     $stateProvider
-        .state('async', {
-            url: '/async',
-            templateUrl: asyncTemplate,
-            controller: 'asyncController',
+        .state('categories', {
+            url: '/categories',
+            templateUrl: categoriesTemplate,
+            controller: 'categoriesCtrl',
+            controllerAs: 'categories',
             resolve: {
-                asyncPreloading: resolverProvider.asyncPagePrealoading
+                asyncPreloading: resolverProvider.categoriesPagePreloading
             }
         });
 
