@@ -4,7 +4,7 @@ export default function (app) {
     app.provider('data', dataProvider);
 
     function dataProvider () {
-        this.categoriesDataPreloading = categoriesDataPreloading;
+        this.catalogDataPreloading = catalogDataPreloading;
         this.itemsDataPreloading = itemsDataPreloading;
 
         this.$get = function () {
@@ -12,10 +12,10 @@ export default function (app) {
         };
     }
 
-    function categoriesDataPreloading (CategoriesData) {
+    function catalogDataPreloading (CatalogData) {
         'ngInject';
 
-        return CategoriesData.getCategories();
+        return CatalogData.getCategories();
     }
 
     function itemsDataPreloading ($stateParams, ItemsData) {

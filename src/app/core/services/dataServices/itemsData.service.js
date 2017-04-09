@@ -4,7 +4,7 @@ export default function(app) {
     app.service('ItemsData', ItemsData);
 };
 
-function ItemsData ($q, CategoriesData, ApiUrls) {
+function ItemsData ($q, CatalogData, ApiUrls) {
     'ngInject';
 
     this.items = {};
@@ -20,7 +20,7 @@ function ItemsData ($q, CategoriesData, ApiUrls) {
     };
 
     this.checkCategoryId = function (categoryId) {
-        return CategoriesData.checkCategoryId(categoryId);
+        return CatalogData.checkCategoryId(categoryId);
     };
 
     this.getItems = function (categoryId) {

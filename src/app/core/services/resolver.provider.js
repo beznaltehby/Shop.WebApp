@@ -4,7 +4,7 @@ export default function (app) {
     app.provider('resolver', resolverProvider);
 
     function resolverProvider () {
-        this.categoriesPagePreloading = categoriesPagePreloading;
+        this.catalogPagePreloading = catalogPagePreloading;
         this.itemsPagePreloading = itemsPagePreloading;
 
         this.$get = function () {
@@ -12,13 +12,13 @@ export default function (app) {
         };
     }
 
-    function categoriesPagePreloading ($q, $ocLazyLoad) {
+    function catalogPagePreloading ($q, $ocLazyLoad) {
         'ngInject';
 
         const deferred = $q.defer();
 
         require.ensure([], (require) => {
-            const asyncModule = require('../../pages/categories/categories.module');
+            const asyncModule = require('../../pages/catalog/catalog.module');
 
             $ocLazyLoad.load({
                 name: asyncModule.default.name,

@@ -1,20 +1,20 @@
 'use strict';
 
-import categoriesTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/categories/categories.html';
+import catalogTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/catalog/catalog.html';
 import itemsTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/items/items.html';
 
 function routeConfig($urlRouterProvider, $stateProvider, resolverProvider, dataProvider) {
     'ngInject';
     
     $stateProvider
-        .state('categories', {
-            url: '/categories',
-            templateUrl: categoriesTemplate,
-            controller: 'categoriesCtrl',
+        .state('catalog', {
+            url: '/catalog',
+            templateUrl: catalogTemplate,
+            controller: 'catalogCtrl',
             controllerAs: 'vm',
             resolve: {
-                asyncPreloading: resolverProvider.categoriesPagePreloading,
-                categoriesData: dataProvider.categoriesDataPreloading
+                asyncPreloading: resolverProvider.catalogPagePreloading,
+                categoriesData: dataProvider.catalogDataPreloading
             }
         });
 

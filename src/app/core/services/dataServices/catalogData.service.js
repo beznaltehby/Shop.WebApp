@@ -3,10 +3,10 @@
 import _ from 'lodash';
 
 export default function(app) {
-    app.service('CategoriesData', CategoriesData);
+    app.service('CatalogData', CatalogData);
 };
 
-function CategoriesData ($q, ApiUrls) {
+function CatalogData ($q, ApiUrls) {
     'ngInject';
 
     this.categories = null;

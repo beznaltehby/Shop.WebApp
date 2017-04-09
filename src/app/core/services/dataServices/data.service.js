@@ -1,9 +1,9 @@
 'use strict';
 
-import categories from './categoriesData.service';
+import catalog from './catalogData.service';
 import items from './itemsData.service';
 
 export default function (app) {
-    categories(app);
+    catalog(app);
     items(app);
 }
