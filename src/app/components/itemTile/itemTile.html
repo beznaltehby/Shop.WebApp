@@ -4,9 +4,9 @@
         {{item.typePrefix}}
     </div>
 </div>
-<div class="item-details">
+<div class="item-details" ng-class="{'no-details': !item.shortDescriptionFeatures.length}">
     <img class="item-preview" ng-src="{{item.image}}" />
-    <div class="item-description">
+    <div class="item-description" ng-show="item.shortDescriptionFeatures.length">
         <div class="description" ng-repeat="description in item.shortDescriptionFeatures">
             <div class="name" title="{{description.name}}">
                 {{description.name}}

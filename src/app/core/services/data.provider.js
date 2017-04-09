@@ -7,6 +7,7 @@ export default function (app) {
         this.catalogDataPreloading = catalogDataPreloading;
         this.itemsDataPreloading = itemsDataPreloading;
         this.itemDataPreloading = itemDataPreloading;
+        this.mainDataPreloading = mainDataPreloading;
 
         this.$get = function () {
             return this;
@@ -29,5 +30,11 @@ export default function (app) {
         'ngInject';
 
         return ItemData.getItem($stateParams.itemId);
+    }
+
+    function mainDataPreloading (MainData) {
+        'ngInject';
+
+        return MainData.getPopularItems();
     }
 }

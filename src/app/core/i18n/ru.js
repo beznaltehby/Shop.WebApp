@@ -3,9 +3,12 @@
 const ru = {
     LABELS: {
         APPNAME: 'ООО "БезНалТех"',
+        MAIN: {
+            POPULARITEMS: 'Популярные товары'
+        },
         CATEGORIES: {
-            NOCHILDITEMS: "В данной категории нет подкатегорий.",
-            SHOWITEMS: "Показать товары"
+            NOCHILDITEMS: 'В данной категории нет подкатегорий.',
+            SHOWITEMS: 'Показать товары'
         },
         MENU: {
             CATALOG: 'Каталог',

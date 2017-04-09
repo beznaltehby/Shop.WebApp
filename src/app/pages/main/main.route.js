@@ -3,7 +3,7 @@
 import mainTpl from './main.html';
 import mainController from './main.controller';
 
-function routeConfig($stateProvider) {
+function routeConfig($stateProvider, dataProvider) {
     'ngInject';
 
     $stateProvider
@@ -11,7 +11,10 @@ function routeConfig($stateProvider) {
             url: '/',
             templateUrl: mainTpl,
             controller: mainController,
-            controllerAs: 'main'
+            controllerAs: 'vm',
+            resolve: {
+                mainData: dataProvider.mainDataPreloading
+            }
         });
 }
 

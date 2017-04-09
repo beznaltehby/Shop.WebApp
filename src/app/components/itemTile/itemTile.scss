@@ -45,6 +45,20 @@ item-tile {
     white-space: nowrap;
   }
 
+  .no-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .item-preview {
+      display: inline-block;
+      max-width: $item-tile-width - 2 * $item-tile-padding;
+      max-height: $item-preview-max-height;
+      width: auto;
+      height: auto;
+    }
+  }
+
   .item-preview {
     display: inline-block;
     max-width: $item-preview-max-width;

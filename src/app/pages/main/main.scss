@@ -1,0 +1,11 @@
+@import "../../core/core";
+
+$popular-items-color: color($brand-primary-color, 700);
+
+.popular-items {
+  font-size: 24px;
+  font-weight: 600;
+  color: $popular-items-color;
+  margin: 10px 20px;
+  text-transform: uppercase;
+}

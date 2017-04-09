@@ -41,4 +41,10 @@ function ApiUrls ($http, consts, $q, $timeout) {
 
         return getRequest(url);
     };
+
+    this.getPopularItems = function () {
+        const url = '/popular';
+
+        return getRequest(url);
+    }
 }
