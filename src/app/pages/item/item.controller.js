@@ -1,6 +1,6 @@
 'use strict';
 
-function ItemController(itemData) {
+function ItemController($state, itemData) {
     'ngInject';
 
     let vm = this;
@@ -17,6 +17,10 @@ function ItemController(itemData) {
     });
 
     vm.warrantyFields = ['warranty', 'supplier', 'country', 'serviceCenters', 'manufacturer'];
+
+    vm.returnToCategory = function () {
+        $state.transitionTo('items', {categoryId: vm.item.category.id});
+    }
 }
 
 export default ItemController;

@@ -4,6 +4,7 @@ $item-price-color: color($red, 700);
 $feature-border-color: color($grey, 300);
 $feature-block-name-background-color: color($grey, 50);
 $feature-hover-color: rgba(color($brand-primary-color, 50), 0.4);
+$item-category-color: color($brand-primary-color, 700);
 
 .item {
   padding: 20px;
@@ -12,6 +13,11 @@ $feature-hover-color: rgba(color($brand-primary-color, 50), 0.4);
   .item-title {
     font-size: 24px;
     font-weight: 600;
+
+    .item-category {
+      color: $item-category-color;
+      cursor: pointer;
+    }
   }
 
   .item-short-description {

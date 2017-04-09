@@ -1,6 +1,9 @@
 <div class="item">
     <div class="item-title">
-        {{vm.item.typePrefix}} {{vm.item.vendor.name}} {{vm.item.model}}
+        <span class="item-category" ng-click="vm.returnToCategory()">
+            {{vm.item.category.name}}
+        </span>
+        {{vm.item.vendor.name}} {{vm.item.model}}
     </div>
     <div class="item-short-description">
         <img class="item-preview" ng-src="{{vm.item.image}}" />
