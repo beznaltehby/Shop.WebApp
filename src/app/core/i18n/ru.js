@@ -23,6 +23,15 @@ const ru = {
             COUNTRY: 'Страна-производитель',
             SERVICECENTERS: 'Сурвисные центры',
             MANUFACTURER: 'Производитель'
+        },
+        DELIVERY: {
+            TITLE: 'Оплата и доставка'
+        },
+        ABOUT: {
+            TITLE: 'О магазине'
+        },
+        CONTACTS: {
+            TITLE: 'Контакты'
         }
     }
 };
