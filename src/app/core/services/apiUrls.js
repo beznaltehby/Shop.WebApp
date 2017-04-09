@@ -16,10 +16,10 @@ function ApiUrls ($http, consts, $q, $timeout) {
     }
 
     // TODO: remove after end developing
-    this.mockRequest = function () {
+    this.mockRequest = function (param) {
         let deferred = $q.defer();
 
-        $timeout(() => deferred.resolve({data: 'mock'}), 2000);
+        $timeout(() => deferred.resolve({data: {item : 'mock: ' + param}}), 2000);
 
         return deferred.promise;
     };
@@ -32,6 +32,12 @@ function ApiUrls ($http, consts, $q, $timeout) {
 
     this.getItemsFromCategory = function (categoryId) {
         const url = '/category/' + categoryId + '/items';
+
+        return getRequest(url);
+    };
+
+    this.getItem = function (itemId) {
+        const url = '/item/' + itemId;
 
         return getRequest(url);
     };

@@ -22,6 +22,7 @@ item-tile {
   height: $item-tile-height;
   font-size: 12px;
   overflow: hidden;
+  cursor: pointer;
 
   .item-title {
     display: flex;

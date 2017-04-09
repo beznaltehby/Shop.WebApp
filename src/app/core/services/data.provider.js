@@ -6,6 +6,7 @@ export default function (app) {
     function dataProvider () {
         this.catalogDataPreloading = catalogDataPreloading;
         this.itemsDataPreloading = itemsDataPreloading;
+        this.itemDataPreloading = itemDataPreloading;
 
         this.$get = function () {
             return this;
@@ -22,5 +23,11 @@ export default function (app) {
         'ngInject';
 
         return ItemsData.getItems($stateParams.categoryId);
+    }
+
+    function itemDataPreloading ($stateParams, ItemData) {
+        'ngInject';
+
+        return ItemData.getItem($stateParams.itemId);
     }
 }

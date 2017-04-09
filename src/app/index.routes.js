@@ -2,6 +2,7 @@
 
 import catalogTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/catalog/catalog.html';
 import itemsTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/items/items.html';
+import itemTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/item/item.html';
 
 function routeConfig($urlRouterProvider, $stateProvider, resolverProvider, dataProvider) {
     'ngInject';
@@ -27,6 +28,18 @@ function routeConfig($urlRouterProvider, $stateProvider, resolverProvider, dataP
             resolve: {
                 asyncPreloading: resolverProvider.itemsPagePreloading,
                 itemsData: dataProvider.itemsDataPreloading
+            }
+        });
+
+    $stateProvider
+        .state('item', {
+            url: '/item/:itemId',
+            templateUrl: itemTemplate,
+            controller: 'itemCtrl',
+            controllerAs: 'vm',
+            resolve: {
+                asyncPreloading: resolverProvider.itemPagePreloading,
+                itemData: dataProvider.itemDataPreloading
             }
         });
 
