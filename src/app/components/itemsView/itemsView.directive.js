@@ -3,7 +3,7 @@
 import itemsViewTpl from './itemsView.html';
 import $ from 'jquery';
 
-function itemsViewComponent() {
+function itemsViewComponent($timeout) {
     'ngInject';
 
     let tileWidth = 312;
@@ -12,6 +12,8 @@ function itemsViewComponent() {
     function centerTiles () {
         let windowWidth = $(window).width();
         let remainingSpace = windowWidth % tileWidth - scrollWidth;
+        remainingSpace = remainingSpace < 0 ? remainingSpace + tileWidth : remainingSpace;
+
         let viewerPadding = remainingSpace / 2;
 
         $('items-view').css({
@@ -20,15 +22,17 @@ function itemsViewComponent() {
     }
 
     function link (scope, element) {
-        if (scope.inline !== 'true') {
-            centerTiles();
+        $timeout(() => {
+            if (scope.inline !== 'true') {
+                centerTiles();
 
-            $(window).on('resize.item-view', centerTiles);
+                $(window).on('resize.item-view', centerTiles);
 
-            scope.$on('destroy', () => $(window).off('resize.item-view', centerTiles));
-        } else {
-            $(element).addClass('inline-mode');
-        }
+                scope.$on('destroy', () => $(window).off('resize.item-view', centerTiles));
+            } else {
+                $(element).addClass('inline-mode');
+            }
+        });
     }
 
     return {
