@@ -10,9 +10,6 @@ function ItemsController($state, itemsData) {
     }
 
     vm.items = itemsData;
-    vm.showItemDetails = function (item) {
-        $state.transitionTo('item', {itemId: item.id});
-    }
 }
 
 export default ItemsController;
