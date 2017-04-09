@@ -5,6 +5,10 @@ function CategoriesController($state, categoriesData) {
 
     let vm = this;
 
+    if (!categoriesData.length) {
+        $state.transitionTo('main');
+    }
+
     vm.categories = categoriesData;
     vm.selectedRootCategory = vm.categories[0];
     vm.selectedSubCategory = vm.selectedRootCategory.children[0];
