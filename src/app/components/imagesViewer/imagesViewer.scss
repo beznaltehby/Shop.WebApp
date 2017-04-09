@@ -5,6 +5,7 @@ $selected-image-border-color: color($brand-primary-color, 100);
 $images-preview-border-color: color($grey, 300);
 $close-image-color: color($grey, 500);
 $close-image-hover-color: color($grey, 700);
+$big-image-max-size: 500px;
 
 .images-preview {
   display: flex;
@@ -44,8 +45,8 @@ $close-image-hover-color: color($grey, 700);
 }
 
 .big-image {
-  max-height: 300px;
-  max-width: 300px;
+  max-height: $big-image-max-size;
+  max-width: $big-image-max-size;
 
   transition: all linear 0.5s;
 
