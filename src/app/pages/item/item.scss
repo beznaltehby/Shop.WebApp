@@ -72,11 +72,6 @@ $item-category-color: color($brand-primary-color, 700);
     margin-top: 20px;
   }
 
-  .item-details, .feature-block {
-    display: flex;
-    flex-direction: column;
-  }
-
   .feature-name, .feature {
     display: flex;
     align-items: center;
@@ -122,5 +117,9 @@ $item-category-color: color($brand-primary-color, 700);
     .feature {
       display: flex;
     }
+  }
+
+  .similar-items {
+    margin-top: 10px;
   }
 }

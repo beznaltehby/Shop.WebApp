@@ -19,7 +19,9 @@ item-tile {
   border: 1px solid $item-tile-border-color;
   margin: 10px;
   width: $item-tile-width;
+  min-width: $item-tile-width;
   height: $item-tile-height;
+  min-height: $item-tile-height;
   font-size: 12px;
   overflow: hidden;
   cursor: pointer;
@@ -32,6 +34,12 @@ item-tile {
     height: $item-tile-header-height;
     margin: 0 $item-tile-padding;
     font-weight: 600;
+
+    .item-model {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
   }
 
   .type {

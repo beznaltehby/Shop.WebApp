@@ -19,18 +19,23 @@ function itemsViewComponent() {
         });
     }
 
-    function link (scope) {
-        centerTiles();
+    function link (scope, element) {
+        if (scope.inline !== 'true') {
+            centerTiles();
 
-        $(window).on('resize.item-view', centerTiles);
+            $(window).on('resize.item-view', centerTiles);
 
-        scope.$on('destroy', () => $(window).off('resize.item-view', centerTiles));
+            scope.$on('destroy', () => $(window).off('resize.item-view', centerTiles));
+        } else {
+            $(element).addClass('inline-mode');
+        }
     }
 
     return {
         restrict: 'E',
         scope: {
-            data: '='
+            data: '=',
+            inline: '@'
         },
         templateUrl: itemsViewTpl,
         controller: 'itemsViewCtrl',

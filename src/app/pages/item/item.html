@@ -55,4 +55,11 @@
             </div>
         </div>
     </div>
+
+    <div class="similar-items" ng-show="vm.item.similar.length">
+        <div class="item-title">
+            ПОХОЖИЕ ТОВАРЫ
+        </div>
+        <items-view data="vm.item.similar" inline="true"></items-view>
+    </div>
 </div>

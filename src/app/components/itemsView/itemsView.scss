@@ -4,4 +4,10 @@ items-view {
   flex-wrap: wrap;
   padding: 0 50px;
   overflow-y: auto;
+
+  &.inline-mode {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0;
+  }
 }
