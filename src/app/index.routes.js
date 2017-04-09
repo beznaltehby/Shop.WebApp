@@ -2,6 +2,7 @@
 
 import catalogTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/catalog/catalog.html';
 import itemsTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/items/items.html';
+import searchTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/search/search.html';
 import itemTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/item/item.html';
 import aboutTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/about/about.html';
 import contactsTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/contacts/contacts.html';
@@ -31,6 +32,18 @@ function routeConfig($urlRouterProvider, $stateProvider, resolverProvider, dataP
             resolve: {
                 asyncPreloading: resolverProvider.itemsPagePreloading,
                 itemsData: dataProvider.itemsDataPreloading
+            }
+        });
+
+    $stateProvider
+        .state('search', {
+            url: '/search?query',
+            templateUrl: searchTemplate,
+            controller: 'searchCtrl',
+            controllerAs: 'vm',
+            resolve: {
+                asyncPreloading: resolverProvider.searchPagePreloading,
+                searchData: dataProvider.searchDataPreloading
             }
         });
 

@@ -46,5 +46,11 @@ function ApiUrls ($http, consts, $q, $timeout) {
         const url = '/popular';
 
         return getRequest(url);
+    };
+
+    this.getSearchedItems = function (query) {
+        const url = '/search?query=' + encodeURIComponent(query);
+
+        return getRequest(url);
     }
 }

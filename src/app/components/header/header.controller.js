@@ -40,7 +40,7 @@ function headerController($state, $rootScope, consts, $log) {
 
     vm.searchQuery = '';
     vm.onSearch = function () {
-        $log.log(vm.searchQuery);
+        $state.transitionTo('search', {query: vm.searchQuery});
     }
 }
 

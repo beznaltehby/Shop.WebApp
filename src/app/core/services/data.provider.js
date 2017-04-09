@@ -8,6 +8,7 @@ export default function (app) {
         this.itemsDataPreloading = itemsDataPreloading;
         this.itemDataPreloading = itemDataPreloading;
         this.mainDataPreloading = mainDataPreloading;
+        this.searchDataPreloading = searchDataPreloading;
 
         this.$get = function () {
             return this;
@@ -36,5 +37,11 @@ export default function (app) {
         'ngInject';
 
         return MainData.getPopularItems();
+    }
+
+    function searchDataPreloading ($stateParams, SearchData) {
+        'ngInject';
+
+        return SearchData.getSearchedItems($stateParams.query);
     }
 }

@@ -32,6 +32,9 @@ const ru = {
         },
         CONTACTS: {
             TITLE: 'Контакты'
+        },
+        SEARCH: {
+            TITLE: 'Найдено по запросу: '
         }
     }
 };
