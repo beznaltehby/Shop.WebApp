@@ -1,3 +1,35 @@
-<div class="category" ng-repeat="category in vm.categories" ng-click="vm.showData(category)">
-    {{category.name}}
+<div class="root-categories">
+    <div class="category"
+         ng-class="{selected: category.id === vm.selectedRootCategory.id}"
+         ng-repeat="category in vm.categories"
+         ng-click="vm.selectRootCategory(category)">
+        {{category.name}}
+    </div>
+</div>
+
+<div class="sub-categories-wrapper">
+    <div class="sub-categories">
+        <div class="category"
+             ng-class="{selected: category.id === vm.selectedSubCategory.id}"
+             ng-repeat="category in vm.selectedRootCategory.children"
+             ng-click="vm.selectSubCategory(category)">
+            {{category.name}}
+        </div>
+    </div>
+    <div class="child-categories"
+         ng-class="{'no-child-categories': !vm.selectedSubCategory.children}">
+        <div class="category"
+             ng-repeat="category in vm.selectedSubCategory.children"
+             ng-click="vm.showItems(category)">
+            {{category.name}}
+        </div>
+        <div class="no-child-categories-message"
+             ng-show="!vm.selectedSubCategory.children">
+            {{ :: "LABELS.CATEGORIES.NOCHILDITEMS" | translate}}
+
+            <span class="link" ng-click="vm.showItems(vm.selectedSubCategory)">
+                {{ :: "LABELS.CATEGORIES.SHOWITEMS" | translate}}
+            </span>
+        </div>
+    </div>
 </div>

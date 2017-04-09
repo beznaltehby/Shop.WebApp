@@ -1,4 +1,7 @@
 @import '../../core/core.scss';
+@import "../../core/material-colors";
+
+$header-background-color: color($orange, 600);
 
 main-header {
   display: flex;
@@ -6,7 +9,7 @@ main-header {
   justify-content: center;
   text-transform: uppercase;
   height: $header-height;
-  background-color: $shop-black-color;
+  background-color: $header-background-color;
   color: $shop-white-color;
   padding: 0 10px;
 }

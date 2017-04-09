@@ -5,7 +5,11 @@ html, body {
 }
 
 * {
-    font-family: 'Noto Sans', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 body {
@@ -13,11 +17,13 @@ body {
   flex-direction: column;
 }
 
-main-header, main-footer {
+main-header {
   flex-shrink: 0;
 }
 
 div[ui-view] {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
   overflow-y: auto;
 }

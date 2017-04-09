@@ -1,6 +1,6 @@
 'use strict';
 
-import i18nEn from './core/i18n/en';
+import i18nRu from './core/i18n/ru';
 
 function config($logProvider, $compileProvider, $translateProvider) {
 	'ngInject';
@@ -12,8 +12,8 @@ function config($logProvider, $compileProvider, $translateProvider) {
         $compileProvider.debugInfoEnabled(false);
     }
 
-    $translateProvider.translations('en', i18nEn);
-    $translateProvider.preferredLanguage('en');
+    $translateProvider.translations('ru', i18nRu);
+    $translateProvider.preferredLanguage('ru');
 }
 
 export default config;

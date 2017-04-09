@@ -1,0 +1,109 @@
+@import "../../core/material-colors";
+
+$category-border-color: color($grey, 300);
+$category-text-color: color($grey, 700);
+$category-hover-background-color: color($grey, 50);
+$category-hover-border-color: color($grey, 700);
+$sub-category-border-color: color($grey, 200);
+$child-category-border-color: color($grey, 100);
+
+.category {
+  color: $category-text-color;
+
+  cursor: pointer;
+  font-weight: 100;
+  font-size: 12px;
+}
+
+.root-categories {
+  display: flex;
+  flex-shrink: 0;
+
+  .category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    height: 75px;
+    width: 100%;
+    min-width: 100px;
+
+    border-right: 1px solid $category-border-color;
+    border-bottom: 2px solid $category-border-color;
+
+    &:last-of-type {
+      border-right: 0 none;
+    }
+
+    &:hover, &.selected {
+      background-color: $category-hover-background-color;
+      border-bottom: 2px solid $category-hover-border-color;
+    }
+  }
+}
+
+.sub-categories-wrapper {
+  display: flex;
+  flex-grow: 1;
+}
+
+.sub-categories {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  min-width: 300px;
+  border-right: 1px solid $sub-category-border-color;
+
+  .category {
+    display: flex;
+    align-items: center;
+    height: 25px;
+    margin-left: 10px;
+
+    &:hover, &.selected {
+      background-color: $category-hover-background-color;
+    }
+  }
+}
+
+.child-categories {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  align-content: flex-start;
+  overflow-y: auto;
+
+  &.no-child-categories {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    height: 75px;
+    width: 25%;
+
+    border-right: 1px solid $child-category-border-color;
+    border-bottom: 1px solid $child-category-border-color;
+    box-sizing: border-box;
+
+    &:hover {
+      background-color: $category-hover-background-color;
+    }
+  }
+
+  .no-child-categories-message {
+    font-weight: 100;
+    font-size: 14px;
+
+    .link {
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}

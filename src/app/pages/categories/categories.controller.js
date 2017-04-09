@@ -6,10 +6,21 @@ function CategoriesController($state, categoriesData) {
     let vm = this;
 
     vm.categories = categoriesData;
+    vm.selectedRootCategory = vm.categories[0];
+    vm.selectedSubCategory = vm.selectedRootCategory.children[0];
 
-    vm.showData = function (category) {
+    vm.showItems = function (category) {
         $state.transitionTo('items', {categoryId: category.id});
-    }
+    };
+
+    vm.selectRootCategory = function (category) {
+        vm.selectedRootCategory = category;
+        vm.selectedSubCategory = vm.selectedRootCategory.children[0];
+    };
+
+    vm.selectSubCategory = function (category) {
+        vm.selectedSubCategory = category;
+    };
 }
 
 export default CategoriesController;

@@ -1,5 +1,7 @@
 'use strict';
 
+import _ from 'lodash';
+
 export default function(app) {
     app.service('CategoriesData', CategoriesData);
 };
@@ -33,9 +35,23 @@ function CategoriesData ($q, ApiUrls) {
         });
     };
 
+    let checkId = function (categories, id) {
+        return !!_.find(categories, (category) => {
+            if (category.id === id) {
+                return true;
+            }
+
+            if (category.children) {
+                return checkId(category.children, id);
+            }
+        });
+    };
+
     this.checkCategoryId = function (categoryId) {
         return this.getCategories().then((categories) => {
-            return !!_.find(categories, {id: parseInt(categoryId)});
+            let id = parseInt(categoryId);
+
+            return checkId(categories, id);
         });
     };
 }
