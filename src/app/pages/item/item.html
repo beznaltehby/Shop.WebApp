@@ -24,6 +24,8 @@
         </div>
     </div>
 
+    <images-viewer images="vm.item.images" ng-if="vm.item.images.length > 1"></images-viewer>
+
     <div class="item-details">
         <div class="feature-block" ng-repeat="featureBlock in vm.item.details.featuresBlocks">
             <div class="feature-name">

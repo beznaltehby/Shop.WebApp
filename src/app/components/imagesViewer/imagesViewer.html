@@ -1,0 +1,19 @@
+<div class="images-preview">
+    <img class="image-preview"
+         ng-class="{selected: vm.selectedImage === image}"
+         ng-src="{{image}}"
+         ng-repeat="image in vm.images"
+         ng-click="vm.selectImage(image)"/>
+</div>
+<div class="big-images">
+    <img class="big-image"
+         ng-src="{{image}}"
+         ng-show="vm.selectedImage === image"
+         ng-repeat="image in vm.images">
+    <div class="close-icon"
+         ng-show="vm.selectedImage"
+         ng-click="vm.closeImage()">
+        &times;
+    </div>
+</div>
+
