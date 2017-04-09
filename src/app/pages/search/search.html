@@ -1,8 +1,16 @@
-<div class="search-page-title">
-    {{ 'LABELS.SEARCH.TITLE' | translate}}
+<div class="search-page-title" ng-show="vm.searchedItems.length">
+    {{ :: 'LABELS.SEARCH.TITLE' | translate}}
     <span class="query">
         {{vm.searchQuery}}
     </span>
 </div>
 
-<items-view data="vm.searchedItems"></items-view>
+<items-view data="vm.searchedItems" ng-show="vm.searchedItems.length"></items-view>
+
+<div class="no-items-found" ng-hide="vm.searchedItems.length">
+    {{ :: 'LABELS.SEARCH.FORREQUEST' | translate}}
+    <span class="query">
+        {{vm.searchQuery}}
+    </span>
+    {{ :: 'LABELS.SEARCH.NOFOUND' | translate}}
+</div>
