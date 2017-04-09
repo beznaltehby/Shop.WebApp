@@ -7,9 +7,9 @@ function ItemsController($state, itemsData) {
 
     if (itemsData === false || !itemsData.length) {
         $state.transitionTo('catalog');
+    } else {
+        vm.items = itemsData;
     }
-
-    vm.items = itemsData;
 }
 
 export default ItemsController;
