@@ -1,14 +1,14 @@
 'use strict';
 
-function CategoriesController(categoriesData) {
+function CategoriesController($state, categoriesData) {
     'ngInject';
 
     let vm = this;
 
-    vm.categories = categoriesData.data;
+    vm.categories = categoriesData;
 
     vm.showData = function (category) {
-
+        $state.transitionTo('items', {categoryId: category.id});
     }
 }
 
