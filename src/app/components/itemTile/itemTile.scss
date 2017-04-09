@@ -1,0 +1,83 @@
+@import "../../core/material-colors";
+
+$item-tile-border-color: color($grey, 200);
+$item-price-color: color($red, 700);
+$item-type-color: color($orange);
+$item-tile-width: 290px;
+$item-tile-height: 270px;
+$item-tile-header-height: 70px;
+$item-tile-footer-height: 40px;
+$item-tile-padding: 20px;
+$item-preview-max-width: 150px;
+$item-preview-max-height: $item-tile-height - $item-tile-header-height - $item-tile-footer-height;
+$item-description-max-width: $item-tile-width - $item-preview-max-width - 2 * $item-tile-padding;
+
+item-tile {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 15px $item-tile-border-color;
+  border: 1px solid $item-tile-border-color;
+  margin: 10px;
+  width: $item-tile-width;
+  height: $item-tile-height;
+  font-size: 12px;
+  overflow: hidden;
+
+  .item-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    height: $item-tile-header-height;
+    margin: 0 $item-tile-padding;
+    font-weight: 600;
+  }
+
+  .type {
+    font-size: 11px;
+    color: $item-type-color;
+  }
+
+  .item-details {
+    flex-grow: 1;
+    margin: 0 $item-tile-padding;
+    white-space: nowrap;
+  }
+
+  .item-preview {
+    display: inline-block;
+    max-width: $item-preview-max-width;
+    max-height: $item-preview-max-height;
+    width: auto;
+    height: auto;
+    padding-right: 5px;
+  }
+
+  .item-description {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 100;
+    max-width: $item-description-max-width;
+
+    .name {
+      font-weight: 600;
+    }
+
+    .name, .value {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+  .item-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: $item-tile-footer-height;
+    flex-shrink: 0;
+    color: $item-price-color;
+    font-weight: 600;
+    margin: 0 $item-tile-padding;
+  }
+}

@@ -1,0 +1,22 @@
+<div class="item-title">
+    <div>{{item.vendor.name}} {{item.model}}</div>
+    <div class="type">
+        {{item.typePrefix}}
+    </div>
+</div>
+<div class="item-details">
+    <img class="item-preview" ng-src="{{item.image}}" />
+    <div class="item-description">
+        <div class="description" ng-repeat="description in item.shortDescriptionFeatures">
+            <div class="name" title="{{description.name}}">
+                {{description.name}}
+            </div>
+            <div class="value" title="{{description.values.join(', ')}}">
+                {{description.values.join(', ')}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="item-footer">
+    {{item.price}} {{item.priceCurrency}}
+</div>

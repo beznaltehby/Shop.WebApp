@@ -9,7 +9,7 @@ function ItemsController($state, itemsData) {
         $state.transitionTo('categories');
     }
 
-    vm.data = itemsData;
+    vm.items = itemsData;
 }
 
 export default ItemsController;
