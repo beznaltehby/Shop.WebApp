@@ -6,7 +6,7 @@ import searchTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/se
 import itemTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/item/item.html';
 import aboutTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/about/about.html';
 import contactsTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/contacts/contacts.html';
-import deliveryTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/delivery/delivery.html';
+import stockTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/stock/stock.html';
 
 function routeConfig($urlRouterProvider, $stateProvider, resolverProvider, dataProvider) {
     'ngInject';
@@ -82,13 +82,13 @@ function routeConfig($urlRouterProvider, $stateProvider, resolverProvider, dataP
         });
 
     $stateProvider
-        .state('delivery', {
-            url: '/delivery',
-            templateUrl: deliveryTemplate,
-            controller: 'deliveryCtrl',
+        .state('stock', {
+            url: '/stock',
+            templateUrl: stockTemplate,
+            controller: 'stockCtrl',
             controllerAs: 'vm',
             resolve: {
-                asyncPreloading: resolverProvider.deliveryPagePreloading
+                asyncPreloading: resolverProvider.stockPagePreloading
             }
         });
 

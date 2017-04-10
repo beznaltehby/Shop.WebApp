@@ -13,8 +13,8 @@ function headerController($state, $rootScope, consts, $log) {
         state: 'catalog',
         activeStates: ['items', 'item']
     }, {
-        translationKey: 'LABELS.MENU.DELIVERY',
-        state: 'delivery'
+        translationKey: 'LABELS.MENU.STOCK',
+        state: 'stock'
     }, {
         translationKey: 'LABELS.MENU.ABOUT',
         state: 'about'

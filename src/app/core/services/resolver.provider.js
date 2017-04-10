@@ -9,7 +9,7 @@ export default function (app) {
         this.itemPagePreloading = itemPagePreloading;
         this.aboutPagePreloading = aboutPagePreloading;
         this.contactsPagePreloading = contactsPagePreloading;
-        this.deliveryPagePreloading = deliveryPagePreloading;
+        this.stockPagePreloading = stockPagePreloading;
         this.searchPagePreloading = searchPagePreloading;
 
         this.$get = function () {
@@ -107,13 +107,13 @@ export default function (app) {
         return deferred.promise;
     }
 
-    function deliveryPagePreloading ($q, $ocLazyLoad) {
+    function stockPagePreloading ($q, $ocLazyLoad) {
         'ngInject';
 
         const deferred = $q.defer();
 
         require.ensure([], (require) => {
-            const asyncModule = require('../../pages/delivery/delivery.module');
+            const asyncModule = require('../../pages/stock/stock.module');
 
             $ocLazyLoad.load({
                 name: asyncModule.default.name,
