@@ -10,14 +10,16 @@ function ItemController($state, itemData) {
     } else {
         vm.item = itemData;
 
-        vm.item.shortDescription = itemData.shortDescriptionHTML.split('<br/>\n').map((item) => {
-            let feature = item.split(': ');
+        if (itemData.shortDescriptionHTML) {
+            vm.item.shortDescription = itemData.shortDescriptionHTML.split('<br/>\n').map((item) => {
+                let feature = item.split(': ');
 
-            return {
-                name: feature[0] + ':',
-                value: feature[1] + '.'
-            };
-        });
+                return {
+                    name: feature[0] + ':',
+                    value: feature[1] + '.'
+                };
+            });
+        }
 
         vm.warrantyFields = ['warranty', 'supplier', 'country', 'serviceCenters', 'manufacturer'];
 

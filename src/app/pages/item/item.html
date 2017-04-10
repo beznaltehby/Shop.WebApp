@@ -41,11 +41,11 @@
             </div>
         </div>
 
-        <div class="feature-block">
+        <div class="feature-block" ng-if="vm.item.warrantyInfo[vm.warrantyFields[0]]">
             <div class="feature-name">
                 {{ :: 'LABELS.ITEM.WARRANTYINFO' | translate }}
             </div>
-            <div class="feature" ng-repeat="field in vm.warrantyFields">
+            <div class="feature" ng-repeat="field in vm.warrantyFields" ng-if="vm.item.warrantyInfo[field]">
                 <div class="name">
                     {{ :: 'LABELS.ITEM.' + field.toUpperCase() | translate }}
                 </div>
