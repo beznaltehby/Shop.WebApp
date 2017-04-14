@@ -23,6 +23,10 @@ function CategoriesController($state, categoriesData) {
 
         vm.selectSubCategory = function (category) {
             vm.selectedSubCategory = category;
+
+            if (!vm.selectedSubCategory.children) {
+                vm.showItems(vm.selectedSubCategory);
+            }
         };
     }
 }
