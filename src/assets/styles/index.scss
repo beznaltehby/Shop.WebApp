@@ -12,18 +12,12 @@ html, body {
   }
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-main-header {
-  flex-shrink: 0;
-}
-
 div[ui-view] {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   overflow-y: auto;
+}
+
+.application-wrapper {
+  height: 100%;
 }

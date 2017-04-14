@@ -4,14 +4,26 @@ $header-background-color: color($brand-primary-color, 600);
 $menu-height: 40px;
 
 main-header {
-  display: flex;
-  flex-direction: column;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  max-height: 400px;
   text-transform: uppercase;
-  height: $header-height;
-  background-color: $header-background-color;
   color: $shop-white-color;
 
+  .parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    transition: opacity .2s ease;
+    padding-bottom: 50%;
+  }
+
   .company-info {
+    position: absolute;
+    top: 0;
     display: flex;
     flex-grow: 1;
     padding: 0 10px;
@@ -24,6 +36,8 @@ main-header {
   }
 
   .actions {
+    position: absolute;
+    bottom: 0;
     display: flex;
     flex-shrink: 0;
     justify-content: space-between;

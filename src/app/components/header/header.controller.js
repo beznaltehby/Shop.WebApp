@@ -1,6 +1,7 @@
 'use strict';
 
 import _ from 'lodash';
+import headerBackground from '_images/header.jpg';
 
 function headerController($state, $rootScope, consts, $log) {
     'ngInject';
@@ -41,7 +42,9 @@ function headerController($state, $rootScope, consts, $log) {
     vm.searchQuery = '';
     vm.onSearch = function () {
         $state.transitionTo('search', {query: vm.searchQuery});
-    }
+    };
+
+    vm.headerBackground = headerBackground;
 }
 
 export default headerController;
