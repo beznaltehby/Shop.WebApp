@@ -1,0 +1,21 @@
+@import '../../core/core.scss';
+
+$footer-background-color: color($blue-grey, 900);
+$item-message-background-color: color($blue-grey, 50);
+$footer-text-color: color($grey, 100);
+$item-message-text-color: color($grey, 700);
+
+.item-message, .footer {
+  padding: 30px;
+  font-size: 14px;
+}
+
+.footer {
+  background-color: $footer-background-color;
+  color: $footer-text-color;    
+}
+
+.item-message {
+  background-color: $item-message-background-color;
+  color: $item-message-text-color;
+}

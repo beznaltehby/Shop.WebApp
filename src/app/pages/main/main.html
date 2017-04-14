@@ -1,3 +1,13 @@
-<div class="popular-items">{{ :: 'LABELS.MAIN.POPULARITEMS' | translate }}</div>
+<div class="stock">
+    <div class="main-label">
+        {{ :: 'LABELS.MAIN.STOCK' | translate }}
+    </div>
+    <div class="no-stocks">
+        {{ :: 'LABELS.MAIN.NOTSTOCKSFOUND' | translate}}
+    </div>
+</div>
 
-<items-view data="vm.popularItems"></items-view>
+<div class="popular-items">
+    <div class="main-label">{{ :: 'LABELS.MAIN.POPULARITEMS' | translate }}</div>
+    <items-view data="vm.popularItems" inline="true"></items-view>
+</div>

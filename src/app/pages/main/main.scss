@@ -2,10 +2,40 @@
 
 $popular-items-color: color($brand-primary-color, 700);
 
-.popular-items {
+.stock {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 20px;
+  background-color: color($blue-grey, 50);
+  color: color($grey, 700);
+  font-size: 14px;
+
+  .main-label {
+    flex-shrink: 0;
+  }
+}
+
+.no-stocks {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 20px;
+  font-weight: 100;
+  color: color($grey, 400);
+}
+
+.main-label {
   font-size: 24px;
   font-weight: 600;
   color: $popular-items-color;
   margin: 10px 20px;
   text-transform: uppercase;
+}
+
+.popular-items {
+  flex-shrink: 0;
+  padding: 20px;
 }

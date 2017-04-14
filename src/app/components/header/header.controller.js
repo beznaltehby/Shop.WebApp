@@ -2,6 +2,7 @@
 
 import _ from 'lodash';
 import headerBackground from '_images/header.jpg';
+import $ from 'jquery';
 
 function headerController($state, $rootScope, consts, $log) {
     'ngInject';
@@ -41,6 +42,10 @@ function headerController($state, $rootScope, consts, $log) {
         selectMenuItem(toState.name);
 
         vm.isMainHeader = toState.name === 'main';
+
+        $("html, body").animate({
+            scrollTop: 0
+        }, 500);
     });
 
     vm.searchQuery = '';

@@ -3,9 +3,8 @@
 $item-price-color: color($red, 700);
 $feature-border-color: color($grey, 300);
 $feature-block-name-background-color: color($grey, 50);
-$feature-hover-color: rgba(color($brand-primary-color, 50), 0.4);
+$feature-hover-color: color($blue-grey, 50);
 $item-category-color: color($brand-primary-color, 700);
-$item-note-color: color($grey, 700);
 
 .item {
   padding: 20px;
@@ -118,12 +117,5 @@ $item-note-color: color($grey, 700);
 
   .similar-items {
     margin-top: 10px;
-  }
-
-  .item-note {
-    color: $item-note-color;
-    font-size: 12px;
-    font-weight: 100;
-    text-align: center;
   }
 }
