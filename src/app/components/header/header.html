@@ -1,18 +1,20 @@
-<div class="parallax" style="background-image: url('{{header.headerBackground}}');"></div>
-<div class="company-info">
-    <img class="logo"
-         ng-src="{{header.logoUrl}}"
-         title="{{ :: 'LABELS.APPNAME' | translate }}"
-         ng-click="header.goTo('main')"/>
-</div>
-<div class="actions">
-    <div class="menu">
-        <div class="menu-item"
-             ng-class="{selected: item.isActive}"
-             ng-repeat="item in header.menuItems"
-             ng-click="header.goTo(item.state)">
-            {{ item.translationKey | translate }}
-        </div>
+<div class="main-header" ng-class="{'full-page-header': header.isMainHeader}">
+    <div class="parallax" style="background-image: url('{{header.headerBackground}}');"></div>
+    <div class="company-info">
+        <img class="logo"
+            ng-src="{{header.logoUrl}}"
+            title="{{ :: 'LABELS.APPNAME' | translate }}"
+            ng-click="header.goTo('main')"/>
     </div>
-    <expandable-search search-query="header.searchQuery" on-search="header.onSearch()" ></expandable-search>
+    <div class="actions">
+        <div class="menu">
+            <div class="menu-item"
+                ng-class="{selected: item.isActive}"
+                ng-repeat="item in header.menuItems"
+                ng-click="header.goTo(item.state)">
+                {{ item.translationKey | translate }}
+            </div>
+        </div>
+        <expandable-search search-query="header.searchQuery" on-search="header.onSearch()" ></expandable-search>
+    </div>
 </div>

@@ -35,8 +35,12 @@ function headerController($state, $rootScope, consts, $log) {
         });
     };
 
+    vm.isMainHeader = false;
+
     $rootScope.$on('$stateChangeSuccess', function (event, toState) {
         selectMenuItem(toState.name);
+
+        vm.isMainHeader = toState.name === 'main';
     });
 
     vm.searchQuery = '';

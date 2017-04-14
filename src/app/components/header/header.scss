@@ -2,14 +2,28 @@
 
 $header-background-color: color($brand-primary-color, 600);
 $menu-height: 40px;
+$main-header-max-height: 100%;
+$header-max-height: 25%;
+$header-logo-height: 300px;
+$header-small-logo-height: 100px;
 
-main-header {
+.main-header {
   display: block;
   position: relative;
   overflow: hidden;
-  max-height: 400px;
+  max-height: $header-max-height;
   text-transform: uppercase;
   color: $shop-white-color;
+  transition: 0.5s;
+
+  &.full-page-header {
+    max-height: $main-header-max-height;
+
+    .logo {
+      margin: auto;
+      max-height: $header-logo-height;
+    }
+  }
 
   .parallax {
     background-attachment: fixed;
@@ -18,31 +32,38 @@ main-header {
     background-repeat: no-repeat;
     width: 100%;
     transition: opacity .2s ease;
-    padding-bottom: 50%;
+    padding-bottom: 100%;
   }
 
   .company-info {
     position: absolute;
     top: 0;
+    left: 0;
+    right: 0;
+    bottom: $menu-height;
     display: flex;
     flex-grow: 1;
     padding: 0 10px;
   }
 
   .logo {
-    max-height: $header-height - $menu-height - 20px;
+    max-height: $header-small-logo-height;
     margin: auto 0;
     cursor: pointer;
   }
 
   .actions {
     position: absolute;
+    left: 0;
+    right: 0;
     bottom: 0;
     display: flex;
     flex-shrink: 0;
     justify-content: space-between;
     height: $menu-height;
     max-height: $menu-height;
+
+    background-color: rgba(#1F1F1F, 0.8);
   }
 
   .menu {
@@ -65,7 +86,7 @@ main-header {
     }
 
     &:hover {
-      background-color: lighten($header-background-color, 5%);
+      background-color: rgba($shop-white-color, 0.1);
     }
   }
 }

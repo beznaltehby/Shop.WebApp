@@ -7,6 +7,7 @@ function headerComponent() {
 
     return {
         restrict: 'E',
+        replace: true,
         templateUrl: headerTpl,
         controller: 'headerCtrl',
         controllerAs: 'header'
