@@ -8,6 +8,20 @@
 </div>
 
 <div class="popular-items">
+    <div class="main-label">Slider Demo</div>
+    <ul rn-carousel="" 
+        rn-carousel-index="vm.popularItemsCarooselIndex" 
+        rn-carousel-auto-slide 
+        rn-carousel-controls 
+        rn-carousel-buffered
+        rn-carousel-transition="fadeAndSlide"
+        style="height: 310px;">
+        <li ng-repeat="itemData in vm.popularItems" class="carousel-tile">
+            <item-tile data="itemData"></item-tile>
+        </li>
+    </ul>
+    <div rn-carousel-indicators ng-if="vm.popularItems.length > 1" slides="vm.popularItems" rn-carousel-index="vm.popularItemsCarooselIndex"></div>
+
     <div class="main-label">{{ :: 'LABELS.MAIN.POPULARITEMS' | translate }}</div>
     <items-view data="vm.popularItems" inline="true"></items-view>
 </div>

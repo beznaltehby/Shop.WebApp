@@ -39,3 +39,14 @@ $popular-items-color: color($brand-primary-color, 700);
   flex-shrink: 0;
   padding: 20px 20px 0 20px;
 }
+
+.carousel-tile {
+  item-tile{
+    margin: 0 auto;
+  }
+}
+
+.rn-carousel-indicator {
+    display: flex;
+    justify-content: center;
+}
