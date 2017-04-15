@@ -8,7 +8,13 @@ module.exports = function(_path) {
     devServer: {
       contentBase: './dist',
       hot: true,
-      inline: true
+      inline: true,
+      proxy: {
+        '/api': {
+            target: 'http://raccoondev.tk/api',
+            pathRewrite: {'^/api' : ''}
+        }
+      }   
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin()
