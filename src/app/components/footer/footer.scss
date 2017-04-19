@@ -1,6 +1,7 @@
 @import '../../core/core.scss';
 
 $footer-background-color: color($blue-grey, 900);
+$brands-logos-background-color: color($blue-grey, 700);
 $item-message-background-color: color($blue-grey, 50);
 $footer-text-color: color($grey, 100);
 $item-message-text-color: color($grey, 700);
@@ -18,4 +19,16 @@ $item-message-text-color: color($grey, 700);
 .item-message {
   background-color: $item-message-background-color;
   color: $item-message-text-color;
+}
+
+.brands-logos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: $brands-logos-background-color;
+}
+
+.brand-logo {
+  margin: 10px;
 }

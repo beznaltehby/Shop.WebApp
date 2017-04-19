@@ -1,6 +1,9 @@
 <div class="item-message" ng-show="footer.isItemPage">
     {{ :: 'LABELS.ITEM.NOTE' | translate }}
 </div>
+<div class="brands-logos">
+    <img class="brand-logo" ng-src={{brandLogo}} ng-repeat="brandLogo in footer.brandsLogos" />
+</div>
 <div class="footer">
     <div>
         {{ :: 'LABELS.FOOTER.ALLRIGHTRESERVED' | translate}} {{footer.year}} {{ :: 'LABELS.COMPANY' | translate}}
