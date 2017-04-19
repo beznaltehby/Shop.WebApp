@@ -1,11 +1,21 @@
-<div class="stocks">
+<div class="main-page-stocks">
     <div class="main-label">
         {{ :: 'LABELS.MAIN.STOCK' | translate }}
     </div>
-    <div class="stocks-slider" ng-if="vm.stocksData.activeStocks.length">
-        {{vm.stocksData}}
-    </div>
-    <div class="no-stocks" ng-if="!vm.stocksData.activeStocks.length">
+    <ul rn-carousel=""
+        rn-carousel-index="vm.stocksCarooselIndex"
+        rn-carousel-auto-slide
+        rn-carousel-controls
+        rn-carousel-buffered
+        rn-carousel-transition="fadeAndSlide"
+        class="stocks-carousel"
+        ng-if="vm.stocksData.length">
+        <li ng-repeat="stockData in vm.stocksData" class="carousel-item">
+            <img ng-src="{{'/static/stocks/' + stockData.image}}">
+        </li>
+    </ul>
+    <div rn-carousel-indicators ng-if="vm.stocksData.length > 1" slides="vm.stocksData" rn-carousel-index="vm.stocksCarooselIndex"></div>
+    <div class="no-stocks" ng-if="!vm.stocksData.length">
         {{ :: 'LABELS.MAIN.NOTSTOCKSFOUND' | translate}}
     </div>
 </div>
@@ -18,20 +28,6 @@
 </div>
 
 <div class="popular-items">
-    <div class="main-label">Slider Demo</div>
-    <ul rn-carousel="" 
-        rn-carousel-index="vm.popularItemsCarooselIndex" 
-        rn-carousel-auto-slide 
-        rn-carousel-controls 
-        rn-carousel-buffered
-        rn-carousel-transition="fadeAndSlide"
-        style="height: 310px;">
-        <li ng-repeat="itemData in vm.popularItems" class="carousel-tile">
-            <item-tile data="itemData"></item-tile>
-        </li>
-    </ul>
-    <div rn-carousel-indicators ng-if="vm.popularItems.length > 1" slides="vm.popularItems" rn-carousel-index="vm.popularItemsCarooselIndex"></div>
-
     <div class="main-label">{{ :: 'LABELS.MAIN.POPULARITEMS' | translate }}</div>
     <items-view data="vm.popularItems" inline="true"></items-view>
 </div>

@@ -13,8 +13,8 @@ function StocksData ($q, ApiUrls) {
         let deferred = $q.defer();
 
         ApiUrls.getStocks()
-            .then(response => deferred.resolve(response.data))
-            .catch(err => deferred.resolve({activeStocks: []}));
+            .then(response => deferred.resolve(response.data.activeStocks))
+            .catch(err => deferred.resolve([]));
 
         this.stocks = deferred.promise;
     };

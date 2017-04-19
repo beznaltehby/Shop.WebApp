@@ -1,0 +1,59 @@
+@import "../../core/core";
+
+$stock-tile-border-color: color($blue-grey, 100);
+
+.stocks-page {
+  padding: 20px;
+
+  .stocks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stock-tile {
+    width: 75%;
+    max-width: 1024px;
+    min-height: 250px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 0 15px $stock-tile-border-color;
+    border: 1px solid $stock-tile-border-color;
+
+    &:nth-child(odd) {
+      .stock-info {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  .stock-title {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .stock-info {
+    display: flex;
+    justify-content: center;
+  }
+
+  .stock-image {
+    flex-shrink: 0;
+    align-self: center;
+    max-width: 75%;
+    width: auto;
+    height: auto;
+  }
+
+  .stock-description {
+    flex-grow: 1;
+    padding: 0 10px;
+    overflow: auto;
+
+    ~ .stock-image {
+      max-width: 60%;
+    }
+  }
+}

@@ -22,7 +22,7 @@ function MainController(mainData, stocksData) {
         bifLogo
     ];
 
-    vm.stocksData = stocksData;
+    vm.stocksData = _.filter(stocksData, 'image');
 }
 
 export default MainController;

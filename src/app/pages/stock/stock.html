@@ -1,1 +1,20 @@
-{{ :: 'LABELS.STOCK.TITLE' | translate }}
+<div class="stocks-page">
+    <div class="main-label">
+        {{ :: 'LABELS.MAIN.STOCK' | translate }}
+    </div>
+    <div class="stocks">
+        <div class="stock-tile" ng-repeat="stockData in vm.stocksData">
+            <div class="stock-title">
+                {{stockData.name}}
+            </div>
+            <div class="stock-info">
+                <div class="stock-description" ng-if="stockData.description" ng-bind-html="stockData.description">
+                </div>
+                <img ng-if="stockData.image" ng-src="{{'/static/stocks/' + stockData.image}}" class="stock-image">
+            </div>
+        </div>
+    </div>
+    <div class="no-stocks" ng-if="!vm.stocksData.length">
+        {{ :: 'LABELS.MAIN.NOTSTOCKSFOUND' | translate}}
+    </div>
+</div>
