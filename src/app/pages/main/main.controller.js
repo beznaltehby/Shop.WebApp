@@ -8,7 +8,7 @@ import estalejLogo from '_images/clients/estalej-logo.png';
 import goodelLogo from '_images/clients/goodel-logo.png';
 import medinatLogo from '_images/clients/medinat-logo.jpg';
 
-function MainController(mainData) {
+function MainController(mainData, stocksData) {
     'ngInject';
 
     let vm = this;
@@ -21,6 +21,8 @@ function MainController(mainData) {
         medinatLogo,
         bifLogo
     ];
+
+    vm.stocksData = stocksData;
 }
 
 export default MainController;

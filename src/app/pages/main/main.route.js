@@ -13,7 +13,8 @@ function routeConfig($stateProvider, dataProvider) {
             controller: mainController,
             controllerAs: 'vm',
             resolve: {
-                mainData: dataProvider.mainDataPreloading
+                mainData: dataProvider.mainDataPreloading,
+                stocksData: dataProvider.stocksDataPreloading
             }
         });
 }

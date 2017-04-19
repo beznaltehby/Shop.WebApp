@@ -88,7 +88,8 @@ function routeConfig($urlRouterProvider, $stateProvider, resolverProvider, dataP
             controller: 'stockCtrl',
             controllerAs: 'vm',
             resolve: {
-                asyncPreloading: resolverProvider.stockPagePreloading
+                asyncPreloading: resolverProvider.stockPagePreloading,
+                stocksData: dataProvider.stocksDataPreloading
             }
         });
 

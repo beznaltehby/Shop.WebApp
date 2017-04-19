@@ -2,7 +2,10 @@
     <div class="main-label">
         {{ :: 'LABELS.MAIN.STOCK' | translate }}
     </div>
-    <div class="no-stocks">
+    <div class="stocks-slider" ng-if="vm.stocksData.activeStocks.length">
+        {{vm.stocksData}}
+    </div>
+    <div class="no-stocks" ng-if="!vm.stocksData.activeStocks.length">
         {{ :: 'LABELS.MAIN.NOTSTOCKSFOUND' | translate}}
     </div>
 </div>

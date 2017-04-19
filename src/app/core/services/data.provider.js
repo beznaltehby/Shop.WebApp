@@ -9,6 +9,7 @@ export default function (app) {
         this.itemDataPreloading = itemDataPreloading;
         this.mainDataPreloading = mainDataPreloading;
         this.searchDataPreloading = searchDataPreloading;
+        this.stocksDataPreloading = stocksDataPreloading;
 
         this.$get = function () {
             return this;
@@ -43,5 +44,11 @@ export default function (app) {
         'ngInject';
 
         return SearchData.getSearchedItems($stateParams.query);
+    }
+
+    function stocksDataPreloading (StocksData) {
+        'ngInject';
+
+        return StocksData.getStocks();
     }
 }

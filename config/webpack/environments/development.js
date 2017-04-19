@@ -13,6 +13,10 @@ module.exports = function(_path) {
         '/api': {
             target: 'http://raccoondev.tk/api',
             pathRewrite: {'^/api' : ''}
+        },
+        '/static': {
+            target: 'http://raccoondev.tk/static',
+            pathRewrite: {'^/static' : ''}
         }
       }   
     },

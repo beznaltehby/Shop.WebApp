@@ -52,5 +52,14 @@ function ApiUrls ($http, consts, $q, $timeout) {
         const url = '/search?query=' + encodeURIComponent(query);
 
         return getRequest(url);
-    }
+    };
+
+    this.getStocks = function () {
+        const url = '/static/stocks/stocks.json?_=' + new Date().getTime();
+
+        return  $http({
+            method: 'GET',
+            url: url
+        });
+    };
 }
