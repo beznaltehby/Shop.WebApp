@@ -25,6 +25,7 @@ item-tile {
   font-size: 12px;
   overflow: hidden;
   cursor: pointer;
+  background-color: $shop-white-color;
 
   .item-title {
     display: flex;

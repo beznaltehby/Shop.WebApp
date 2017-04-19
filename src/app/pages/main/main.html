@@ -1,9 +1,16 @@
-<div class="stock">
+<div class="stocks">
     <div class="main-label">
         {{ :: 'LABELS.MAIN.STOCK' | translate }}
     </div>
     <div class="no-stocks">
         {{ :: 'LABELS.MAIN.NOTSTOCKSFOUND' | translate}}
+    </div>
+</div>
+
+<div class="clients-info">
+    <div class="main-label">{{ :: 'LABELS.MAIN.CLIENTSTITLE' | translate }}</div>
+    <div class="logos">
+        <img class="logo" ng-src="{{logo}}" ng-repeat="logo in vm.clients">
     </div>
 </div>
 

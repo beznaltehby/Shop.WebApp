@@ -6,7 +6,8 @@ const ru = {
         MAIN: {
             POPULARITEMS: 'Популярные товары',
             STOCK: 'Акции',
-            NOTSTOCKSFOUND: 'В данный момент нет акций :('
+            NOTSTOCKSFOUND: 'В данный момент нет акций :(',
+            CLIENTSTITLE: 'Наши клиенты'
         },
         FOOTER: {
             ALLRIGHTRESERVED: 'Все права защищены ©',

@@ -1,15 +1,17 @@
 @import "../../core/core";
 
 $popular-items-color: color($brand-primary-color, 700);
+$main-page-block-background-color: color($blue-grey, 50);
+$popular-item-tile-border-color: color($blue-grey, 100);
 
-.stock {
+.stocks {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   padding: 20px;
-  background-color: color($blue-grey, 50);
   color: color($grey, 700);
   font-size: 14px;
+  background-color: $main-page-block-background-color;  
 
   .main-label {
     flex-shrink: 0;
@@ -35,7 +37,22 @@ $popular-items-color: color($brand-primary-color, 700);
   text-transform: uppercase;
 }
 
+.clients-info {
+  padding: 20px;
+
+  .logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
 .popular-items {
   flex-shrink: 0;
   padding: 20px 20px 0 20px;
+  background-color: $main-page-block-background-color;  
+
+  item-tile {
+    box-shadow: 0 0 15px $popular-item-tile-border-color;
+  }
 }
