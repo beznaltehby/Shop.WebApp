@@ -23,13 +23,5 @@
              ng-click="vm.showItems(category)">
             {{category.name}}
         </div>
-        <div class="no-child-categories-message"
-             ng-show="!vm.selectedSubCategory.children">
-            {{ :: "LABELS.CATEGORIES.NOCHILDITEMS" | translate}}
-
-            <span class="link" ng-click="vm.showItems(vm.selectedSubCategory)">
-                {{ :: "LABELS.CATEGORIES.SHOWITEMS" | translate}}
-            </span>
-        </div>
     </div>
 </div>
