@@ -14,6 +14,8 @@ function config($logProvider, $compileProvider, $translateProvider) {
 
     $translateProvider.translations('ru', i18nRu);
     $translateProvider.preferredLanguage('ru');
+
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|skype):/);
 }
 
 export default config;

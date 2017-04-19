@@ -1,10 +1,39 @@
 <div class="main-header" ng-class="{'full-page-header': header.isMainHeader}">
     <div class="parallax" style="background-image: url('{{header.headerBackground}}');"></div>
-    <div class="company-info">
-        <img class="logo"
-            ng-src="{{header.logoUrl}}"
-            title="{{ :: 'LABELS.APPNAME' | translate }}"
-            ng-click="header.goTo('main')"/>
+    <div class="company-info-wrapper">
+        <div class="company-info">
+            <img class="logo"
+                ng-src="{{header.logoUrl}}"
+                title="{{ :: 'LABELS.APPNAME' | translate }}"
+                ng-click="header.goTo('main')"/>
+
+            <div class="contacts">
+                <div class="phones">
+                    <div>
+                        <img ng-src={{header.mtsLogo}}>
+                        <span>{{ :: 'LABELS.CONTACTS.PHONES.MTS' | translate }}</span>
+                    </div>
+                    <div>
+                        <img ng-src={{header.velcomLogo}}>
+                        <span>{{ :: 'LABELS.CONTACTS.PHONES.VELCOM' | translate }}</span>
+                    </div>
+                </div>
+                <div class="enternet-contacts">
+                    <div>
+                        <a href="skype:{{ :: 'LABELS.CONTACTS.SKYPE.ADRESS' | translate }}?chat">
+                            {{ :: 'LABELS.CONTACTS.SKYPE.ADRESS' | translate }}
+                        </a>
+                        <img ng-src={{header.skypeLogo}}>
+                    </div>
+                    <div>
+                        <a href="mailto:{{ :: 'LABELS.CONTACTS.EMAIL.ADRESS' | translate }}">
+                            {{ :: 'LABELS.CONTACTS.EMAIL.ADRESS' | translate }}
+                        </a>
+                        <img ng-src={{header.emailLogo}}>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="actions">
         <div class="menu">

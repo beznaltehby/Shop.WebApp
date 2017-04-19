@@ -1,1 +1,45 @@
-{{ :: 'LABELS.CONTACTS.TITLE' | translate }}
+<div class="contacts-page">
+    <div class="section">
+        <div class="title">
+            {{ :: 'LABELS.CONTACTS.PHONES.TITLE' | translate }}
+        </div>
+        <div>
+            <img ng-src={{vm.mtsLogo}}>
+            <span>{{ :: 'LABELS.CONTACTS.PHONES.MTS' | translate }}</span>
+            <span>{{ :: 'LABELS.CONTACTS.PHONES.MTSTITLE' | translate }}</span>
+        </div>
+        <div>
+            <img ng-src={{vm.velcomLogo}}>
+            <span>{{ :: 'LABELS.CONTACTS.PHONES.VELCOM' | translate }}</span>
+            <span>{{ :: 'LABELS.CONTACTS.PHONES.VELCOMTITLE' | translate }}</span>
+        </div>
+    </div>
+    <div class="section">
+        <div>
+            <img ng-src={{vm.skypeLogo}}>   
+            <span>{{ :: 'LABELS.CONTACTS.SKYPE.TITLE' | translate }}</span>  
+            <a href="skype:{{ :: 'LABELS.CONTACTS.SKYPE.ADRESS' | translate }}?chat">
+                {{ :: 'LABELS.CONTACTS.SKYPE.ADRESS' | translate }}
+            </a>
+        </div>
+        <div>
+            <img ng-src={{vm.emailLogo}}>  
+            <span>{{ :: 'LABELS.CONTACTS.EMAIL.TITLE' | translate }}</span>   
+            <a href="mailto:{{ :: 'LABELS.CONTACTS.EMAIL.ADRESS' | translate }}">
+                {{ :: 'LABELS.CONTACTS.EMAIL.ADRESS' | translate }}
+            </a>
+        </div>
+    </div>
+    <div class="section">
+        <div class="title">
+            {{ :: 'LABELS.CONTACTS.POST.TITLE' | translate }}
+        </div>
+        <span>{{ :: 'LABELS.CONTACTS.POST.ADRESS' | translate }}</span>
+    </div>
+    <div class="section">
+        <div class="title">
+            {{ :: 'LABELS.CONTACTS.COMPANYINFO.TITLE' | translate }}
+        </div>
+        <pre>{{ :: 'LABELS.CONTACTS.COMPANYINFO.INFO' | translate }}</pre>
+    </div>
+</div>

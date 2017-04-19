@@ -2,6 +2,10 @@
 
 import _ from 'lodash';
 import headerBackground from '_images/header.jpg';
+import mtsLogo from '_images/mts-logo.png';
+import velcomLogo from '_images/velcom-logo.png';
+import skypeLogo from '_images/skype-logo.png';
+import emailLogo from '_images/email-logo.png';
 import $ from 'jquery';
 
 function headerController($state, $rootScope, consts, $log) {
@@ -54,6 +58,10 @@ function headerController($state, $rootScope, consts, $log) {
     };
 
     vm.headerBackground = headerBackground;
+    vm.mtsLogo = mtsLogo;
+    vm.velcomLogo = velcomLogo;
+    vm.skypeLogo = skypeLogo;
+    vm.emailLogo = emailLogo;
 }
 
 export default headerController;

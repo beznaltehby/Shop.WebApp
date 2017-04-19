@@ -19,8 +19,34 @@ $header-small-logo-height: 100px;
   &.full-page-header {
     max-height: $main-header-max-height;
 
-    .logo {
+    .company-info {
+      flex-direction: column;
+      width: auto;
       margin: auto;
+    }
+
+    .contacts {
+      margin-top: 50px;
+      flex-direction: row;
+
+      .phones {
+        margin-right: 10px;
+      }
+
+      .enternet-contacts {
+        margin-left: 10px;
+      }
+
+      .enternet-contacts div {
+        flex-direction: row;
+
+        img {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .logo {
       max-height: $header-logo-height;
     }
   }
@@ -35,7 +61,7 @@ $header-small-logo-height: 100px;
     padding-bottom: 100%;
   }
 
-  .company-info {
+  .company-info-wrapper {
     position: absolute;
     top: 0;
     left: 0;
@@ -46,10 +72,63 @@ $header-small-logo-height: 100px;
     padding: 0 10px;
   }
 
-  .logo {
-    max-height: $header-small-logo-height;
+  .company-info {    
+    display: flex;
+    justify-content: space-between;    
     margin: auto 0;
+    width: 100%;
+    padding: 0 20px;    
+  }
+
+  .logo {
+    margin: auto 0;
+    max-height: $header-small-logo-height;
     cursor: pointer;
+  }
+  
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 100;
+
+    .phones, .enternet-contacts {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .phones {
+      div {
+        display: flex;
+        align-items: center;
+        height: 30px;
+        cursor: default;
+        
+        img {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .enternet-contacts {
+      div {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        height: 30px;
+
+        a {
+          color: $shop-white-color;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        
+        img {
+          margin-right: 10px;
+        }
+      }
+    }
   }
 
   .actions {
