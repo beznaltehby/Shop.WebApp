@@ -56,3 +56,14 @@ $popular-item-tile-border-color: color($blue-grey, 100);
     box-shadow: 0 0 15px $popular-item-tile-border-color;
   }
 }
+
+.carousel-tile {
+  item-tile{
+    margin: 0 auto;
+  }
+}
+
+.rn-carousel-indicator {
+    display: flex;
+    justify-content: center;
+}

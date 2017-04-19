@@ -22,6 +22,7 @@ const App = angular.module(
         'ngResource',
         'oc.lazyLoad',
         'pascalprecht.translate',
+        'angular-carousel',
 
         coreModule.name,
         indexComponents.name,

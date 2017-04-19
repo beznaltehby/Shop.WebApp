@@ -13,3 +13,5 @@ import "angular-aria";
 import "jquery";
 import "angular-resource";
 import "angular-translate";
+import "angular-carousel"
+import "angular-carousel/dist/angular-carousel.css";
