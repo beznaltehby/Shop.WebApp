@@ -25,6 +25,7 @@ $item-message-text-color: color($grey, 700);
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
   padding: 20px;
   background-color: $brands-logos-background-color;
 }
