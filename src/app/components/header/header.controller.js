@@ -6,6 +6,7 @@ import mtsLogo from '_images/mts-logo.png';
 import velcomLogo from '_images/velcom-logo.png';
 import skypeLogo from '_images/skype-logo.png';
 import emailLogo from '_images/email-logo.png';
+import belnaztehLogo from '_images/belnazteh-logo.png';
 import $ from 'jquery';
 
 function headerController($state, $rootScope, consts, $log) {
@@ -13,7 +14,6 @@ function headerController($state, $rootScope, consts, $log) {
 
     let vm = this;
 
-    vm.logoUrl = consts.logoUrl;
     vm.menuItems = [{
         translationKey: 'LABELS.MENU.CATALOG',
         state: 'catalog',
@@ -62,6 +62,7 @@ function headerController($state, $rootScope, consts, $log) {
     vm.velcomLogo = velcomLogo;
     vm.skypeLogo = skypeLogo;
     vm.emailLogo = emailLogo;
+    vm.belnaztehLogo = belnaztehLogo;
 }
 
 export default headerController;
