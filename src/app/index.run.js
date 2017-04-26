@@ -1,7 +1,9 @@
 'use strict';
 
-function runBlock($rootScope) {
+function runBlock($window, $rootScope, $location) {
 	'ngInject';
+
+    $window.ga('create', 'UA-98153492-1', 'auto');
 
     $rootScope.indicators = {
         pageLoading: true
@@ -13,6 +15,7 @@ function runBlock($rootScope) {
 
     $rootScope.$on('$stateChangeSuccess', function () {
         $rootScope.indicators.pageLoading = false;
+        $window.ga('send', 'pageview', $location.path());
     });
 
     $rootScope.$on('$stateChangeError', function () {
