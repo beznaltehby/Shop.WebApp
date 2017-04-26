@@ -3,7 +3,7 @@
 function runBlock($window, $rootScope, $location) {
 	'ngInject';
 
-    $window.ga('create', 'UA-98153492-1', 'auto');
+    $window.ga('create', 'UA-98152910-1', 'auto');
 
     $rootScope.indicators = {
         pageLoading: true
