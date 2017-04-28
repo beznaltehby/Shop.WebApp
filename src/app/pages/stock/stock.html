@@ -8,7 +8,7 @@
                 {{stockData.name}}
             </div>
             <div class="stock-info">
-                <div class="stock-description" ng-if="stockData.description" ng-bind-html="stockData.description">
+                <div class="stock-description" ng-if="stockData.description" ng-bind-html="vm.trustAsHtml(stockData.description)">
                 </div>
                 <img ng-if="stockData.image" ng-src="{{'/static/stocks/' + stockData.image}}" class="stock-image">
             </div>

@@ -11,11 +11,11 @@ module.exports = function(_path) {
       inline: true,
       proxy: {
         '/api': {
-            target: 'http://raccoondev.tk/api',
+            target: 'http://beznaltech.tk/api',
             pathRewrite: {'^/api' : ''}
         },
         '/static': {
-            target: 'http://raccoondev.tk/static',
+            target: 'http://beznaltech.tk/static',
             pathRewrite: {'^/static' : ''}
         }
       }   
