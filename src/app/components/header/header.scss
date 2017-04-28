@@ -3,7 +3,8 @@
 $header-background-color: color($brand-primary-color, 600);
 $menu-height: 40px;
 $main-header-max-height: 100%;
-$header-max-height: 25%;
+$header-height: 25%;
+$header-min-height: 225px;
 $header-logo-height: 350px;
 $header-small-logo-height: 150px;
 
@@ -11,7 +12,8 @@ $header-small-logo-height: 150px;
   display: block;
   position: relative;
   overflow: hidden;
-  max-height: $header-max-height;
+  min-height: $header-min-height;
+  height: $header-height;
   text-transform: uppercase;
   color: $shop-white-color;
   transition: 0.5s;
