@@ -27,6 +27,9 @@ function headerController($state, $rootScope, consts, $log) {
     }, {
         translationKey: 'LABELS.MENU.CONTACTS',
         state: 'contacts'
+    }, {
+        translationKey: 'LABELS.MENU.SERVICES',
+        state: 'services'
     }];
 
     vm.goTo = function (state) {

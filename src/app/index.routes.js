@@ -7,6 +7,7 @@ import itemTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/item
 import aboutTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/about/about.html';
 import contactsTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/contacts/contacts.html';
 import stockTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/stock/stock.html';
+import servicesTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/services/services.html';
 
 function routeConfig($urlRouterProvider, $stateProvider, resolverProvider, dataProvider) {
     'ngInject';
@@ -93,6 +94,16 @@ function routeConfig($urlRouterProvider, $stateProvider, resolverProvider, dataP
             }
         });
 
+    $stateProvider
+        .state('services', {
+            url: '/services',
+            templateUrl: servicesTemplate,
+            controller: 'servicesCtrl',
+            controllerAs: 'vm',
+            resolve: {
+                asyncPreloading: resolverProvider.servicesPagePreloading
+            }
+        });
 
     $urlRouterProvider.otherwise('/');
 }

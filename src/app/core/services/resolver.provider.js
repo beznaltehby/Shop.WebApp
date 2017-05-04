@@ -11,6 +11,7 @@ export default function (app) {
         this.contactsPagePreloading = contactsPagePreloading;
         this.stockPagePreloading = stockPagePreloading;
         this.searchPagePreloading = searchPagePreloading;
+        this.servicesPagePreloading = servicesPagePreloading;
 
         this.$get = function () {
             return this;
@@ -132,6 +133,24 @@ export default function (app) {
 
         require.ensure([], (require) => {
             const asyncModule = require('../../pages/search/search.module');
+
+            $ocLazyLoad.load({
+                name: asyncModule.default.name,
+            });
+
+            deferred.resolve(asyncModule.default.controller);
+        });
+
+        return deferred.promise;
+    }
+
+    function servicesPagePreloading ($q, $ocLazyLoad) {
+        'ngInject';
+
+        const deferred = $q.defer();
+
+        require.ensure([], (require) => {
+            const asyncModule = require('../../pages/services/services.module');
 
             $ocLazyLoad.load({
                 name: asyncModule.default.name,

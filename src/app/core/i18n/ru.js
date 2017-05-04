@@ -22,7 +22,8 @@ const ru = {
             CATALOG: 'Каталог',
             STOCK: 'Акции',
             ABOUT: 'О компании',
-            CONTACTS: 'Контакты'
+            CONTACTS: 'Контакты',
+            SERVICES: 'Услуги'
         },
         ITEM: {
             WARRANTYINFO: 'Гарантийная информация',
@@ -84,6 +85,14 @@ const ru = {
             TITLE: 'Найдено по запросу: ',
             FORREQUEST: 'По запросу: ',
             NOFOUND: ' ничего не найдено.'
+        },
+        SERVICES: {
+            OUTSORTING: {
+                TITLE: 'ИТ – аутсорсинг'
+            },
+            WORKSTATION: {
+                TITLE: 'Рабочее место «Под ключ»'
+            }
         }
     }
 };
